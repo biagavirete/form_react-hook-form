@@ -1,11 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, TextField } from '@material-ui/core';
+import { toast, Toaster } from 'react-hot-toast';
 import { Form } from './styles';
 
 const FormComponent = () => {
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: any) => {
+    toast.success('Cadastro realizado')
+    console.log(data);
+  }
 
   const married = watch("married");
 
@@ -41,6 +45,7 @@ const FormComponent = () => {
         )}
         {errors.married && <p>Campo obrigatório</p>}
       </div>
+      <Toaster />
       <Button type="submit" variant="outlined" color="primary">
         Enviar
       </Button>
