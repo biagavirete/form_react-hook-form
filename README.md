@@ -1,4 +1,4 @@
-# Formulário com React-Hook-Form
+# Formulário com React Hook Form
 
 Projeto React utilizando Typescript desenvolvido na trilha React do Campinas Tech Talents, utilizando a lib <a href="https://react-hook-form.com/">React Hook Form</a> para validação de formulário.
 
