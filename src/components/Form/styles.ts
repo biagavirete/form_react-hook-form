@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Form = styled.form`
+export const Form = styled.div`
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,11 @@ export const Form = styled.form`
   border-radius: 6px;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.35); 
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.35);
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
 h3 {
   align-self: center;
@@ -30,5 +35,6 @@ h3 {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
+}
 
 `;
