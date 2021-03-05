@@ -18,7 +18,7 @@ describe("Form", () => {
     const nameInput = screen.getByLabelText("Nome");
     const emailInput = screen.getByLabelText("E-mail");
     const ageInput = screen.getByLabelText("Idade");
-    const formElement = screen.getByTestId("form")
+    const formElement = screen.getByTestId("form");
 
     userEvent.type(emailInput, "email");
     userEvent.type(nameInput, "Beatriz");
@@ -64,7 +64,24 @@ describe("Form", () => {
     userEvent.click(radioYes);
     const conditionalInputField = await screen.findByLabelText('Nome do cônjuge')
     expect(conditionalInputField).toBeInTheDocument();
+  });
 
+  it('should validate form if required inputs are filled', async () => {
+    render(<FormComponent />);
+    const nameInput = screen.getByLabelText("Nome");
+    const emailInput = screen.getByLabelText("E-mail");
+    const ageInput = screen.getByLabelText("Idade");
+    const radioInput = screen.getByLabelText("Não");
+    const formElement = screen.getByTestId("form");
+
+    userEvent.type(emailInput, "email@gmail.com");
+    userEvent.type(nameInput, "Beatriz");
+    userEvent.type(ageInput, "28")
+    userEvent.click(radioInput);
+
+    fireEvent.submit(formElement);
+
+    expect(await screen.findAllByRole("alert")).toHaveLength(0);
   });
 
 });
