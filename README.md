@@ -25,6 +25,13 @@ $ yarn
 $  yarn start
 ```
 
+> Iniciar os testes
+
+```bash
+$  yarn test
+```
+
+
 ## Desenvolvido com
 
 * Typescript
